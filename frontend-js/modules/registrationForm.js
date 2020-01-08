@@ -60,12 +60,13 @@ export default class RegistrationForm {
         this.passwordImmediately()
         this.passwordAfterDelay()
 
-        if(this.username.isUnique && !this.username.errors 
-            && this.email.isUnique && !this.email.errors
-            && this.password.errors
-            ) {
-            this.form.submit()
-        }
+        // if(this.username.isUnique && !this.username.errors 
+        //     && this.email.isUnique && !this.email.errors
+        //     && this.password.errors
+        //     ) {
+        //     this.form.submit()
+        // }
+        this.form.submit()
     }
 
     // Username Related
@@ -95,20 +96,20 @@ export default class RegistrationForm {
             this.showValidationError(this.username, "Username must be at least 3 characters.")
         }
 
-        if(!this.username.errors) {
-            axios.post('/doesUsernameExist', {_crsf: this._csrf, username: this.username.value})
-            .then((response) => {
-                if(response.data.username) {
-                    this.showValidationError(this.username, "That username is already taken.")
-                    this.username.isUnique = false
-                } else {
-                    this.username.isUnique = true
-                }
-            })
-            .catch(() => {
-                console.log("Please try again later.")
-            })
-        }
+        // if(!this.username.errors) {
+        //     axios.post('/doesUsernameExist', {_crsf: this._csrf, username: this.username.value})
+        //     .then((response) => {
+        //         if(response.data) {
+        //             this.showValidationError(this.username, "That username is already taken.")
+        //             this.username.isUnique = false
+        //         } else {
+        //             this.username.isUnique = true
+        //         }
+        //     })
+        //     .catch(() => {
+        //         console.log("Please try again later.")
+        //     })
+        // }
     }
     // Email related
     emailHandler() {
