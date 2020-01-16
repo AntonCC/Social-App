@@ -13,7 +13,7 @@ app.use(express.json())
 app.use('/api', require('./router-api'))
 
 let sessionOptions = session({
-    secret: "Javascript is so cool",
+    secret: process.env.SESSIONSECRET,
     store: new MongoStore({client: require('./db')}),
     resave: false,
     saveUninitialized: false,

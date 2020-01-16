@@ -32,7 +32,7 @@ exports.apiCreate = function(req, res) {
 
 exports.viewSingle = async function(req, res) {
     try {
-        // id corresponds to :id set up in router
+        // id corresponds to :id parameter in router
         let post = await Post.findSingleById(req.params.id, req.visitorId)
         res.render('single-post-screen', {post: post, title: post.title})
     } catch(e) {
