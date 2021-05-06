@@ -29,7 +29,7 @@
     "marked": "^0.8.0",
     "md5": "^2.2.1",
     "mongodb": "^3.3.5",
-    "sanitize-html": "^1.20.1",
+    "sanitize-html": "^2.3.2",
     "socket.io": "^2.3.0",
     "validator": "^12.1.0",
     "webpack": "^4.41.3",
